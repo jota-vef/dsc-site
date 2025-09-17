@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jota-vef.github.io/dsc-site"
+  "homepage": "https://jota-vef.github.io/dsc-site",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
