@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -9,13 +9,15 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                <Code className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold">DSC</span>
+              <img 
+                src="/logo-ithertech.svg" 
+                alt="Ithertech Logo" 
+                className="w-8 h-8"
+              />
+              <span className="text-xl font-bold">Ithertech</span>
             </div>
             <p className="text-gray-300 mb-4">
-              Digital Solutions Company - Desarrollo web personalizado para startups y pymes.
+              Ithertech - Desarrollo web personalizado para startups y pymes.
             </p>
             <div className="flex items-center space-x-2 text-gray-300">
               <MapPin className="w-4 h-4" />
@@ -29,7 +31,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2 text-gray-300">
                 <Mail className="w-4 h-4" />
-                <span>hello@dsc.com</span>
+                <span>adm.digitalsolutionscompany@gmail.com</span>
               </div>
               <p className="text-sm text-gray-400">
                 Respuesta en 24 horas o menos
@@ -42,7 +44,7 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 Digital Solutions Company. Todos los derechos reservados.
+            © 2025 Ithertech. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 text-sm text-gray-400">
             <a href="#" className="hover:text-white transition-colors">Privacidad</a>

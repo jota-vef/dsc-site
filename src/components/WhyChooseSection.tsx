@@ -1,28 +1,28 @@
 import React from 'react';
-import { MessageCircle, DollarSign, Zap, Target } from 'lucide-react';
+import { HandHeart, Search, TrendingUp } from 'lucide-react';
 
 const WhyChooseSection: React.FC = () => {
   const features = [
     {
-      icon: MessageCircle,
-      title: 'Comunicación directa',
-      description: 'Sin burocracia, directamente con el equipo de desarrollo',
-      highlight: 'Sin intermediarios',
-    },
-    {
-      icon: DollarSign,
-      title: 'Valor excepcional',
-      description: 'De Argentina, al mundo 🇦🇷',
-      highlight: 'Calidad global',
-    },
-    {
-      icon: Zap,
-      title: 'Proceso flexible',
-      description: 'Nos adaptamos a sus necesidades y plazos específicos',
+      icon: HandHeart,
+      title: 'Flexibilidad',
+      description: 'Nos adaptamos a sus necesidades y forma de trabajar',
       highlight: 'Metodología ágil',
     },
     {
-      icon: Target,
+      icon: Search,
+      title: 'Transparencia',
+      description: 'Comunicación clara y precios sin sorpresas',
+      highlight: 'Sin intermediarios',
+    },
+    {
+      icon: HandHeart,
+      title: 'Cercanía',
+      description: 'Relación directa con el equipo de desarrollo',
+      highlight: 'Calidad global',
+    },
+    {
+      icon: TrendingUp,
       title: 'Enfoque en el crecimiento',
       description: 'Soluciones que se adaptan al crecimiento de su negocio',
       highlight: 'Escalabilidad',
@@ -34,7 +34,7 @@ const WhyChooseSection: React.FC = () => {
       <div className="dsc-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
-            Por qué nos eligen las startups y las pymes
+            Por qué nos eligen
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Combinamos excelencia técnica con un enfoque humano y transparente

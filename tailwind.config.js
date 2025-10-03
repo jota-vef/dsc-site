@@ -13,9 +13,9 @@ export default {
           50: '#EFF6FF',
           100: '#DBEAFE',
           200: '#BFDBFE',
-          500: '#2563EB',
-          600: '#1D4ED8',
-          700: '#1E40AF',
+          500: '#3B82F6',
+          600: '#2563EB',
+          700: '#1D4ED8',
         },
         'dsc-gray': {
           50: '#F8FAFC',

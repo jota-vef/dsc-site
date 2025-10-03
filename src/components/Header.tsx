@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,10 +32,12 @@ const Header: React.FC = () => {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-              <Code className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-800">DSC</span>
+            <img 
+              src="/logo-ithertech.svg" 
+              alt="Ithertech Logo" 
+              className="w-8 h-8"
+            />
+            <span className="text-xl font-bold text-gray-800">Ithertech</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -49,12 +51,6 @@ const Header: React.FC = () => {
                 {item.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="dsc-btn-primary"
-            >
-              Comience su proyecto
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,13 +81,6 @@ const Header: React.FC = () => {
                   {item.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                className="dsc-btn-primary mt-4 text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Comience su proyecto
-              </a>
             </div>
           </div>
         )}
