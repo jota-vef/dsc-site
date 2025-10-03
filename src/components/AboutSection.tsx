@@ -1,30 +1,7 @@
 import React from 'react';
-import { Heart, Shield, Lightbulb, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
-  const values = [
-    {
-      icon: Heart,
-      title: 'Flexibilidad',
-      description: 'Nos adaptamos a sus necesidades y forma de trabajar',
-    },
-    {
-      icon: Shield,
-      title: 'Transparencia',
-      description: 'Comunicación clara y precios sin sorpresas',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Cercanía',
-      description: 'Relación directa con el equipo de desarrollo',
-    },
-    {
-      icon: Award,
-      title: 'Excelencia',
-      description: 'Estándares técnicos de nivel internacional',
-    },
-  ];
-
   return (
     <section id="about" className="dsc-section bg-gray-50">
       <div className="dsc-container">
@@ -45,27 +22,19 @@ const AboutSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Right Column - Values Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {values.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
-                <div
-                  key={value.title}
-                  className={`dsc-card text-center dsc-fade-in dsc-animate-delay-${index + 1}`}
-                >
-                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="w-6 h-6 text-blue-500" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {value.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    {value.description}
-                  </p>
-                </div>
-              );
-            })}
+          {/* Right Column - Excellence Card */}
+          <div className="flex justify-center">
+            <div className="dsc-card text-center max-w-sm dsc-fade-in">
+              <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <Award className="w-8 h-8 text-blue-500" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Excelencia
+              </h3>
+              <p className="text-gray-600">
+                Estándares técnicos de nivel internacional
+              </p>
+            </div>
           </div>
         </div>
       </div>

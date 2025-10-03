@@ -1,35 +1,31 @@
 import React from 'react';
-import { Search, FileText, Code, Rocket } from 'lucide-react';
+import { Monitor, FileText, Code, Rocket } from 'lucide-react';
 
 const ProcessSection: React.FC = () => {
   const steps = [
     {
-      icon: Search,
+      icon: Monitor,
       number: '01',
-      title: 'Llamada de descubrimiento',
+      title: 'Primera conversación de descubrimiento',
       description: 'Comprender sus necesidades específicas y objetivos de negocio',
-      duration: '1 día',
     },
     {
       icon: FileText,
       number: '02',
       title: 'Propuesta y planificación',
       description: 'Plazos transparentes y precios sin sorpresas',
-      duration: '2-3 días',
     },
     {
       icon: Code,
       number: '03',
       title: 'Desarrollo',
       description: 'Actualizaciones periódicas y comunicación directa durante todo el proceso',
-      duration: '2-8 semanas',
     },
     {
       icon: Rocket,
       number: '04',
       title: 'Lanzamiento y asistencia',
       description: 'Colaboración continua para asegurar el éxito de su proyecto',
-      duration: 'Continuo',
     },
   ];
 
@@ -64,14 +60,9 @@ const ProcessSection: React.FC = () => {
                       <IconComponent className="w-6 h-6 text-blue-500" />
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-xl font-semibold text-gray-900">
-                          {step.title}
-                        </h3>
-                        <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-                          {step.duration}
-                        </span>
-                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                        {step.title}
+                      </h3>
                       <p className="text-gray-600">
                         {step.description}
                       </p>

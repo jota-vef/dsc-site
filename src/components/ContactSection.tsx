@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Mail, Clock } from 'lucide-react';
+import { Send, Mail, Clock, Linkedin, Instagram } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -127,25 +127,6 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
-                    Plazo preferido
-                  </label>
-                  <select
-                    id="timeline"
-                    name="timeline"
-                    value={formData.timeline}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  >
-                    <option value="">Seleccione un plazo</option>
-                    <option value="urgent">Urgente (1-2 semanas)</option>
-                    <option value="standard">Estándar (3-6 semanas)</option>
-                    <option value="flexible">Flexible (2-3 meses)</option>
-                    <option value="planning">Solo planificando</option>
-                  </select>
-                </div>
-
-                <div>
                   <label htmlFor="project" className="block text-sm font-medium text-gray-700 mb-2">
                     Descripción del proyecto *
                   </label>
@@ -159,6 +140,25 @@ const ContactSection: React.FC = () => {
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                     placeholder="Cuéntenos sobre su proyecto, objetivos y cualquier requisito específico..."
                   />
+                </div>
+
+                <div>
+                  <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
+                    Preferencia de contacto
+                  </label>
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  >
+                    <option value="">Seleccione una preferencia</option>
+                    <option value="email">Correo electrónico</option>
+                    <option value="call">Llamada telefónica</option>
+                    <option value="video">Videollamada</option>
+                    <option value="any">Cualquier método</option>
+                  </select>
                 </div>
 
                 <button
@@ -189,7 +189,7 @@ const ContactSection: React.FC = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       Correo electrónico
                     </h3>
-                    <p className="text-gray-600 mb-1">hello@dsc.com</p>
+                    <p className="text-gray-600 mb-1">adm.digitalsolutionscompany@gmail.com</p>
                     <p className="text-sm text-gray-500">
                       Normalmente respondemos en un plazo de 24 horas
                     </p>
@@ -214,19 +214,35 @@ const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-blue-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  ¿Prefiere una llamada?
+              <div className="dsc-card">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Síguenos en redes sociales
                 </h3>
-                <p className="text-gray-600 mb-4">
-                  Programe una llamada gratuita de 30 minutos para discutir su proyecto en detalle.
-                </p>
-                <a
-                  href="#"
-                  className="dsc-btn-secondary text-center w-full"
-                >
-                  Programar llamada
-                </a>
+                <div className="flex space-x-4">
+                  <a
+                    href="#"
+                    className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-200"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-6 h-6 text-blue-500" />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-200"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-6 h-6 text-blue-500" />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-200"
+                    aria-label="TikTok"
+                  >
+                    <svg className="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -79,7 +79,7 @@ code, pre {
 }
 
 .dsc-gradient-bg {
-  background: linear-gradient(135deg, var(--dsc-blue-50) 0%, white 100%);
+  background: linear-gradient(135deg, var(--dsc-gray-50) 0%, var(--dsc-gray-100) 100%);
 }
 
 .dsc-card {
