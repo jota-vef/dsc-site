@@ -1,43 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ArrowRight, Globe, Clock } from "lucide-react";
-import { BlogPost, getPosts } from "../blog/getPosts";
-import { PortableText } from "@portabletext/react";
-import { getPostBySlug, type BlogPostFull } from "../blog/getPostBySlug"; // ajustá el path si hace falta
 
 const HeroSection: React.FC = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
-  const [selectedPost, setSelectedPost] = useState<BlogPostFull | null>(null);
-  const [loadingPost, setLoadingPost] = useState(false);
-
-  // 1) Traer listado de posts al cargar
-  useEffect(() => {
-    getPosts()
-      .then(setPosts)
-      .catch((err) => {
-        console.error("Error trayendo posts:", err);
-      });
-  }, []);
-
-  // 2) Traer el post completo cuando elegís uno
-  useEffect(() => {
-    if (!selectedSlug) {
-      setSelectedPost(null);
-      return;
-    }
-
-    setLoadingPost(true);
-    getPostBySlug(selectedSlug)
-      .then((post) => {
-        setSelectedPost(post);
-      })
-      .catch((err) => {
-        console.error("Error trayendo post:", err);
-        setSelectedPost(null);
-      })
-      .finally(() => setLoadingPost(false));
-  }, [selectedSlug]);
-
   return (
     <section className="pt-20 pb-16 dsc-gradient-bg">
       <div className="dsc-container">
@@ -73,52 +37,6 @@ const HeroSection: React.FC = () => {
               Vea nuestro proceso
             </a>
           </div>
-
-          {/* Sanity */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 mb-6 dsc-fade-in">
-            Posts de Sanity
-          </h2>
-          {posts.length === 0 ? (
-            <p>No hay posts todavía.</p>
-          ) : (
-            <>
-              <ul>
-                {posts.map((p) => (
-                  <li key={p.slug} className="mb-2">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedSlug(p.slug)}
-                      className="text-left underline text-blue-600 hover:text-blue-800"
-                    >
-                      {p.title}
-                    </button>
-
-                    {p.publishedAt ? (
-                      <small className="text-gray-500">
-                        {" "}
-                        — {new Date(p.publishedAt).toLocaleDateString()}
-                      </small>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-
-              {loadingPost ? (
-                <p className="mt-6">Cargando post…</p>
-              ) : selectedPost ? (
-                <article className="mt-8 prose max-w-none">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                    {selectedPost.title}
-                  </h3>
-
-                  <PortableText value={selectedPost.body} />
-                </article>
-              ) : selectedSlug ? (
-                <p className="mt-6 text-gray-600">No se encontró el post.</p>
-              ) : null}
-            </>
-          )}
-          {/* Sanity */}
 
           {/* Time Zone Coverage */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto dsc-fade-in dsc-animate-delay-3">
